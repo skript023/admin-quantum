@@ -1,6 +1,26 @@
 <script setup lang="ts">
+import Chatbox from '@/components/Chatbox.vue';
+import Chatmenu from '@/components/Chatmenu.vue';
 import Navigation from '@/components/Navigation.vue';
+import { ref } from 'vue';
 
+// State untuk mengontrol tampilan
+const showChatMenu = ref(true); // Mulai dengan menampilkan ChatMenu
+const selectedContact = ref<any>(null); // Untuk menyimpan kontak yang dipilih
+
+const handleContactSelection = (contact: any) => {
+  selectedContact.value = contact;
+  showChatMenu.value = false; // Sembunyikan ChatMenu, tampilkan Chatbox
+  console.log('Selected contact:', contact);
+  // Di sini Anda bisa memuat data chat untuk kontak yang dipilih ke Chatbox
+  // Misalnya, Anda bisa meneruskan `selectedContact` sebagai prop ke Chatbox
+};
+
+// Fungsi untuk kembali ke Chat Menu (jika diperlukan, misalnya tombol back di Chatbox)
+const goBackToMenu = () => {
+  showChatMenu.value = true;
+  selectedContact.value = null;
+};
 </script>
 
 <template>
@@ -135,21 +155,8 @@ import Navigation from '@/components/Navigation.vue';
             </div>
 
             <div class="card bg-base-100 shadow">
-                <div class="card-body">
-                    <h2 class="card-title">Calendar</h2>
-                    <!-- You can use a calendar plugin or a simple grid -->
-                    <div class="mt-4 text-sm">
-                    <p class="text-center font-semibold">July 2025</p>
-                    <!-- Simplified calendar or use Vue calendar lib -->
-                    <!-- Upcoming Events List -->
-                    <div class="mt-4 space-y-2">
-                        <div class="flex justify-between"><span><i class="ph ph-circle-fill text-primary mr-1"></i>Team Meeting</span><span>July 15</span></div>
-                        <div class="flex justify-between"><span><i class="ph ph-circle-fill text-error mr-1"></i>Project Deadline</span><span>July 22</span></div>
-                        <div class="flex justify-between"><span><i class="ph ph-circle-fill text-warning mr-1"></i>Review Session</span><span>July 28</span></div>
-                        <div class="flex justify-between"><span><i class="ph ph-circle-fill text-info mr-1"></i>Client Call</span><span>July 5</span></div>
-                    </div>
-                    </div>
-                </div>
+                <Chatmenu v-if="showChatMenu" @select-contact="handleContactSelection" />
+                <Chatbox v-else :selectedContact="selectedContact" @back-to-menu="goBackToMenu" />
             </div>
         </div>
     </Navigation>
