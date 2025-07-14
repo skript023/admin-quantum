@@ -17,17 +17,20 @@
                     </div>
                 </div>
 
-                <ul class="menu space-y-1">
-                    <li><a class="active"><i class="ph ph-gauge mr-2"></i> Dashboard</a></li>
-                    <li><a><i class="ph ph-chart-bar mr-2"></i> Analytics</a></li>
-                    <li><a><i class="ph ph-users mr-2"></i> Users</a></li>
-                    <li><a><i class="ph ph-file-text mr-2"></i> Reports</a></li>
-                    <li><a><i class="ph ph-chat-circle-text mr-2"></i> Messages</a></li>
-                    <li><a><i class="ph ph-calendar-blank mr-2"></i> Calendar</a></li>
-                </ul>
+                <div class="mt-8">
+                    <p class="text-xs text-gray-500 font-semibold mb-2">NAVIGATION</p>
+                    <ul class="menu space-y-1 w-full">
+                        <li><a class="active"><i class="ph ph-gauge mr-2"></i> Dashboard</a></li>
+                        <li><a><i class="ph ph-chart-bar mr-2"></i> Analytics</a></li>
+                        <li><a><i class="ph ph-users mr-2"></i> Users</a></li>
+                        <li><a><i class="ph ph-file-text mr-2"></i> Reports</a></li>
+                        <li><a><i class="ph ph-chat-circle-text mr-2"></i> Messages</a></li>
+                        <li><a><i class="ph ph-calendar-blank mr-2"></i> Calendar</a></li>
+                    </ul>
+                </div>
         
                 <!-- Quick Actions -->
-                <div class="mt-8">
+                <!-- <div class="mt-8">
                     <p class="text-sm font-semibold mb-2">QUICK ACTIONS</p>
                     <div class="grid grid-cols-2 gap-2">
                     <button class="btn btn-sm btn-outline"><i class="ph ph-file-plus mr-1"></i> New</button>
@@ -35,10 +38,11 @@
                     <button class="btn btn-sm btn-outline"><i class="ph ph-paper-plane-right mr-1"></i> Send</button>
                     <button class="btn btn-sm btn-outline"><i class="ph ph-warning mr-1"></i> Alert</button>
                     </div>
-                </div>
+                </div> -->
     
                 <!-- System Status -->
                 <div class="mt-8">
+                    <div class="divider"></div>
                     <p class="text-xs text-gray-500 font-semibold mb-5">SYSTEM STATUS</p>
                     <ul class="space-y-3">
                         <li class="flex justify-between items-center">
@@ -67,56 +71,57 @@
                         </li>
                     </ul>
                 </div>
+                <div class="mt-8">
+                    <div class="divider"></div>
+                    <p class="text-xs text-gray-500 font-semibold mb-5">RECENT ACTIVITIES</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-2">
+                            <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
+                            <div>
+                                <p class="text-sm font-medium">New user registered</p>
+                                <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 2 min ago</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
+                            <div>
+                                <p class="text-sm font-medium">Sales report generated</p>
+                                <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 15 min ago</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
+                            <div>
+                                <p class="text-sm font-medium">System backup completed</p>
+                                <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 1 hour ago</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
+                            <div>
+                                <p class="text-sm font-medium">New message received</p>
+                                <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 2 hours ago</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
+                            <div>
+                                <p class="text-sm font-medium">Database maintenance completed</p>
+                                <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 3 hours ago</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
+                            <div>
+                                <p class="text-sm font-medium">User profile updated</p>
+                                <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 4 hours ago</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-    
             <!-- Recent Activities -->
-            <div class="mt-8">
-                <p class="text-xs text-gray-500 font-semibold mb-5">RECENT ACTIVITIES</p>
-                <ul class="space-y-4">
-                    <li class="flex items-start space-x-2">
-                        <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
-                        <div>
-                            <p class="text-sm font-medium">New user registered</p>
-                            <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 2 min ago</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                        <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
-                        <div>
-                            <p class="text-sm font-medium">Sales report generated</p>
-                            <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 15 min ago</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                        <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
-                        <div>
-                            <p class="text-sm font-medium">System backup completed</p>
-                            <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 1 hour ago</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                        <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
-                        <div>
-                            <p class="text-sm font-medium">New message received</p>
-                            <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 2 hours ago</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                        <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
-                        <div>
-                            <p class="text-sm font-medium">Database maintenance completed</p>
-                            <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 3 hours ago</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                        <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
-                        <div>
-                            <p class="text-sm font-medium">User profile updated</p>
-                            <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 4 hours ago</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            
             <!-- USER PROFILE -->
             <div class="mt-6 border-t pt-4 min-h-full min-w-full">
                 <div class="flex items-center space-x-3">
@@ -228,8 +233,8 @@
                             </div>
 
                             <!-- Growth indicator -->
-                            <div class="flex items-center text-purple-500 text-sm font-medium">
-                            <i class="ph ph-trend-down mr-1"></i> +15.3%
+                            <div class="flex items-center text-red-500 text-sm font-medium">
+                            <i class="ph ph-trend-down mr-1"></i> -15.3%
                             </div>
                         </div>
 
