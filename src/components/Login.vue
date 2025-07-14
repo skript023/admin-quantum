@@ -5,7 +5,7 @@
                 <!-- Logo -->
                 <div class="flex justify-center mb-6">
                     <div class="w-16 h-16 rounded-lg flex items-center justify-center">
-                        <img src="/public/logo.png" alt="Logo" class="w-full h-full object-contain" id="logoImage">
+                        <img src="/logo.png" alt="Logo" class="w-full h-full object-contain" id="logoImage">
                     </div>
                 </div>
                 

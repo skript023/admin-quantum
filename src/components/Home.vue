@@ -3,36 +3,43 @@
       <!-- Sidebar -->
         <aside
             :class="[
-                'fixed z-40 top-0 left-0 w-72 bg-base-200 text-base-content min-h-screen p-4 flex flex-col justify-between transition-transform duration-300 ease-in-out',
+                'fixed z-40 top-0 left-0 w-72 bg-base text-base-content min-h-screen p-4 flex flex-col justify-between transition-transform duration-300 ease-in-out',
                 isDrawerOpen ? 'translate-x-0' : '-translate-x-full'
             ]"
             >
             <!-- Top Navigation -->
             <div>
-            <h2 class="text-xl font-bold mb-6">Admin Panel</h2>
-            <ul class="menu space-y-1">
-                <li><a class="active"><i class="ph ph-gauge mr-2"></i> Dashboard</a></li>
-                <li><a><i class="ph ph-chart-bar mr-2"></i> Analytics</a></li>
-                <li><a><i class="ph ph-users mr-2"></i> Users</a></li>
-                <li><a><i class="ph ph-file-text mr-2"></i> Reports</a></li>
-                <li><a><i class="ph ph-chat-circle-text mr-2"></i> Messages</a></li>
-                <li><a><i class="ph ph-calendar-blank mr-2"></i> Calendar</a></li>
-            </ul>
-    
-            <!-- Quick Actions -->
-            <div class="mt-8">
-                <p class="text-sm font-semibold mb-2">QUICK ACTIONS</p>
-                <div class="grid grid-cols-2 gap-2">
-                <button class="btn btn-sm btn-outline"><i class="ph ph-file-plus mr-1"></i> New</button>
-                <button class="btn btn-sm btn-outline"><i class="ph ph-user-plus mr-1"></i> Add</button>
-                <button class="btn btn-sm btn-outline"><i class="ph ph-paper-plane-right mr-1"></i> Send</button>
-                <button class="btn btn-sm btn-outline"><i class="ph ph-warning mr-1"></i> Alert</button>
+                <div class="flex items-center space-x-2 mb-6">
+                    <img src="/logo.png" alt="Logo" class="w-6 h-6" />
+                    <div>
+                        <h2 class="text-lg font-semibold leading-tight">Admin Panel</h2>
+                        <p class="text-xs text-gray-500 leading-tight">Control Center</p>
+                    </div>
                 </div>
-            </div>
+
+                <ul class="menu space-y-1">
+                    <li><a class="active"><i class="ph ph-gauge mr-2"></i> Dashboard</a></li>
+                    <li><a><i class="ph ph-chart-bar mr-2"></i> Analytics</a></li>
+                    <li><a><i class="ph ph-users mr-2"></i> Users</a></li>
+                    <li><a><i class="ph ph-file-text mr-2"></i> Reports</a></li>
+                    <li><a><i class="ph ph-chat-circle-text mr-2"></i> Messages</a></li>
+                    <li><a><i class="ph ph-calendar-blank mr-2"></i> Calendar</a></li>
+                </ul>
+        
+                <!-- Quick Actions -->
+                <div class="mt-8">
+                    <p class="text-sm font-semibold mb-2">QUICK ACTIONS</p>
+                    <div class="grid grid-cols-2 gap-2">
+                    <button class="btn btn-sm btn-outline"><i class="ph ph-file-plus mr-1"></i> New</button>
+                    <button class="btn btn-sm btn-outline"><i class="ph ph-user-plus mr-1"></i> Add</button>
+                    <button class="btn btn-sm btn-outline"><i class="ph ph-paper-plane-right mr-1"></i> Send</button>
+                    <button class="btn btn-sm btn-outline"><i class="ph ph-warning mr-1"></i> Alert</button>
+                    </div>
+                </div>
     
                 <!-- System Status -->
                 <div class="mt-8">
-                    <p class="text-xs text-gray-500 mb-5">SYSTEM STATUS</p>
+                    <p class="text-xs text-gray-500 font-semibold mb-5">SYSTEM STATUS</p>
                     <ul class="space-y-3">
                         <li class="flex justify-between items-center">
                             <span class="flex items-center text-sm"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span> Server Status</span>
@@ -64,7 +71,7 @@
     
             <!-- Recent Activities -->
             <div class="mt-8">
-                <p class="text-sm font-semibold mb-2">RECENT ACTIVITIES</p>
+                <p class="text-xs text-gray-500 font-semibold mb-5">RECENT ACTIVITIES</p>
                 <ul class="space-y-4">
                     <li class="flex items-start space-x-2">
                         <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
@@ -111,18 +118,19 @@
                 </ul>
             </div>
             <!-- USER PROFILE -->
-            <div class="mt-6 border-t pt-4">
+            <div class="mt-6 border-t pt-4 min-h-full min-w-full">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-full bg-neutral text-white flex items-center justify-center font-semibold">
-                        EL
+                    <div class="avatar avatar-online">
+                        <div class="w-10 rounded-full bg-neutral text-neutral-content flex items-center justify-center">
+                            <img src="https://img.daisyui.com/images/profile/demo/gordon@192.webp" />
+                        </div>
                     </div>
                     <div class="flex flex-col">
-                    <p class="font-semibold text-sm">Jokowi</p>
-                    <p class="text-xs text-gray-500">Administrator</p>
+                        <p class="font-semibold text-sm">Jokowi</p>
+                        <p class="text-xs text-gray-500">Administrator</p>
                     </div>
                 </div>
             </div>
-
         </aside>
   
         <!-- Overlay for mobile -->
@@ -147,8 +155,8 @@
                     </button>
                 </div>
                 <div class="flex-1">
-                    <h1 class="text-xl font-bold">Admin Dashboard</h1>
-                    <p class="text-sm text-base-content/70">Welcome back, Jokowi</p>
+                    <h1 class="text-lg font-bold">Admin Dashboard</h1>
+                    <p class="text-xs text-base-content/70">Welcome back, Jokowi</p>
                 </div>
             </header>
 
