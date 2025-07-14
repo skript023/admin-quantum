@@ -21,3 +21,7 @@
 .drawer-open {
     grid-template-columns: 320px calc(100% - 320px);
 }
+
+body {
+    @apply text-xs; /* atau text-xs */
+}

@@ -11,4 +11,10 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  server: {
+    allowedHosts: ['fe-dev.rena.my.id'],
+    // Optional: jika kamu pakai reverse proxy atau subdomain
+    host: '0.0.0.0',
+    port: 5173
+  },
 })
