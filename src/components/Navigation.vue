@@ -156,6 +156,75 @@
                     <h1 class="text-lg font-bold">Admin Dashboard</h1>
                     <p class="text-xs text-base-content/70">Welcome back, Jokowi</p>
                 </div>
+                <!-- Notification Dropdown -->
+                <div class="flex-none">
+                    <div class="dropdown dropdown-end">
+                        <!-- Trigger -->
+                        <label tabindex="0" class="btn btn-ghost btn-circle">
+                        <div class="indicator">
+                            <i class="ph ph-bell text-xl"></i>
+                            <span class="badge badge-xs badge-error indicator-item"></span>
+                        </div>
+                        </label>
+
+                        <!-- Dropdown Content -->
+                        <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-80 bg-base-100 shadow-lg">
+                            <div class="card-body">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-semibold text-sm">Recent Notifications</h3>
+                                    <span class="badge badge-error text-xs">3</span>
+                                </div>
+
+                                <ul class="divide-y divide-gray-200">
+                                <!-- Item 1 -->
+                                    <li class="py-2 flex items-start space-x-3">
+                                        <div class="bg-blue-100 text-blue-600 rounded-full p-2">
+                                            <i class="ph ph-user text-lg"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm font-medium">New user registered</p>
+                                            <p class="text-xs text-gray-500 mt-0.5 flex items-center">
+                                                <i class="ph ph-clock mr-1"></i> 5 min ago
+                                            </p>
+                                        </div>
+                                    </li>
+
+                                    <!-- Item 2 -->
+                                    <li class="py-2 flex items-start space-x-3">
+                                        <div class="bg-red-100 text-red-600 rounded-full p-2">
+                                            <i class="ph ph-warning text-lg"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm font-medium">System alert: High CPU usage</p>
+                                            <p class="text-xs text-gray-500 mt-0.5 flex items-center">
+                                                <i class="ph ph-clock mr-1"></i> 10 min ago
+                                            </p>
+                                        </div>
+                                    </li>
+
+                                    <!-- Item 3 -->
+                                    <li class="py-2 flex items-start space-x-3">
+                                        <div class="bg-purple-100 text-purple-600 rounded-full p-2">
+                                            <i class="ph ph-envelope text-lg"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm font-medium">You have 3 new messages</p>
+                                            <p class="text-xs text-gray-500 mt-0.5 flex items-center">
+                                                <i class="ph ph-clock mr-1"></i> 20 min ago
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="pt-2">
+                                    <a href="#" class="btn btn-sm btn-block btn-primary text-xs">
+                                        View All Notifications
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </header>
 
             <!-- CONTENT (unchanged) -->
