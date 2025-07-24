@@ -156,7 +156,7 @@
                     </button>
                 </div>
                 <div class="flex-1">
-                    <h1 class="text-lg font-bold">Admin Dashboard</h1>
+                    <h1 class="text-lg font-bold">{{ props.title }}</h1>
                     <p class="text-xs text-base-content/70">Welcome back, Jokowi</p>
                 </div>
                 <!-- Notification Dropdown -->
@@ -246,6 +246,13 @@
 import { onMounted, ref, watch } from 'vue'
 import { Chart, registerables } from 'chart.js'
 import Sidebar from './Sidebar.vue'
+
+const props = defineProps({
+  title: {
+    type: String,
+    required: true
+  },
+});
   
 Chart.register(...registerables)
 

@@ -9,22 +9,22 @@ const showChatMenu = ref(true); // Mulai dengan menampilkan ChatMenu
 const selectedContact = ref<any>(null); // Untuk menyimpan kontak yang dipilih
 
 const handleContactSelection = (contact: any) => {
-  selectedContact.value = contact;
-  showChatMenu.value = false; // Sembunyikan ChatMenu, tampilkan Chatbox
-  console.log('Selected contact:', contact);
-  // Di sini Anda bisa memuat data chat untuk kontak yang dipilih ke Chatbox
-  // Misalnya, Anda bisa meneruskan `selectedContact` sebagai prop ke Chatbox
+    selectedContact.value = contact;
+    showChatMenu.value = false; // Sembunyikan ChatMenu, tampilkan Chatbox
+    console.log('Selected contact:', contact);
+    // Di sini Anda bisa memuat data chat untuk kontak yang dipilih ke Chatbox
+    // Misalnya, Anda bisa meneruskan `selectedContact` sebagai prop ke Chatbox
 };
 
 // Fungsi untuk kembali ke Chat Menu (jika diperlukan, misalnya tombol back di Chatbox)
 const goBackToMenu = () => {
-  showChatMenu.value = true;
-  selectedContact.value = null;
+    showChatMenu.value = true;
+    selectedContact.value = null;
 };
 </script>
 
 <template>
-    <Navigation>
+    <Navigation title="Admin Dashboard">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             <div class="p-4 border border-green-300 rounded-xl shadow-sm bg-base">
                 <div class="flex justify-between items-start">

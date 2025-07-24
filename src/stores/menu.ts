@@ -7,7 +7,7 @@ export const useMenuStore = defineStore('menu', {
             {
                 label: 'Dashboard',
                 icon: 'ph ph-gauge',
-                route: '/home'
+                route: '/dashboard'
             },
             {
                 label: 'Analytics',
@@ -18,7 +18,7 @@ export const useMenuStore = defineStore('menu', {
                 label: 'Users',
                 icon: 'ph ph-users',
                 children: [
-                    { label: 'All Users', route: '/users' },
+                    { label: 'Users Activity', route: '/user/activity' },
                     { label: 'Roles', route: '/users/roles' },
                 ]
             },
