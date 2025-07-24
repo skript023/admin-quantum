@@ -5,7 +5,7 @@ import Home from '@/modules/home/Home.vue'
 
 const routes = [
   { path: '/', component: Login },
-  { path: '/home', component: Home },
+  { path: '/dashboard', component: Home },
 ]
 
 const router = createRouter({
