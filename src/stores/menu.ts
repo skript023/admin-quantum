@@ -24,7 +24,7 @@ export const useMenuStore = defineStore('menu', {
             },
             {
                 label: 'Tiket Support',
-                icon: 'ph ph-file-text',
+                icon: 'ph ph-ticket',
                 route: '/ticket'
             },
             { label: 'Messages', icon: 'ph ph-chat-circle-text', route: '/messages' },
