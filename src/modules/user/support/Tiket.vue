@@ -1,88 +1,78 @@
 <template>
     <Navigation title="RDR Mod Support">
       <div class="space-y-6">
-  
         <!-- HEADER -->
         <div>
-          <h1 class="text-2xl font-bold">RDR Mod Support</h1>
-          <p class="text-sm text-gray-500">
-            Kelola isu dan bantuan teknis RDR mod menu
-          </p>
+            <h1 class="text-2xl font-bold">RDR Mod Support</h1>
+            <p class="text-sm text-gray-500">
+                Kelola isu dan bantuan teknis RDR mod menu
+            </p>
         </div>
   
         <!-- SEARCH & FILTER -->
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div class="flex items-center w-full md:w-1/2">
-            <input
-              v-model="search"
-              type="text"
-              placeholder="Cari tickets..."
-              class="input input-bordered w-full"
-            />
-            <button class="btn btn-ghost btn-circle ml-2">
-              <i class="ph ph-funnel"></i>
-            </button>
-          </div>
-          <div class="flex gap-2">
-            <select v-model="selectedStatus" class="select select-bordered">
-              <option value="">Semua Status</option>
-              <option value="Open">Open</option>
-              <option value="In Progress">In Progress</option>
-              <option value="Resolved">Resolved</option>
-              <option value="Closed">Closed</option>
-            </select>
-            <select v-model="selectedPriority" class="select select-bordered">
-              <option value="">Semua Prioritas</option>
-              <option value="Low">Low</option>
-              <option value="Medium">Medium</option>
-              <option value="High">High</option>
-              <option value="Urgent">Urgent</option>
-            </select>
-          </div>
+            <div class="flex items-center w-full md:w-1/2">
+                <input v-model="search" type="text" placeholder="Cari tickets..." class="input input-bordered w-full"/>
+                <button class="btn btn-ghost btn-circle ml-2">
+                    <i class="ph ph-funnel"></i>
+                </button>
+            </div>
+            <div class="flex gap-2">
+                <select v-model="selectedStatus" class="select select-bordered">
+                    <option value="">Semua Status</option>
+                    <option value="Open">Open</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Resolved">Resolved</option>
+                    <option value="Closed">Closed</option>
+                </select>
+                <select v-model="selectedPriority" class="select select-bordered">
+                    <option value="">Semua Prioritas</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                    <option value="Urgent">Urgent</option>
+                </select>
+            </div>
         </div>
   
         <!-- TICKET LIST -->
         <div class="space-y-4">
-          <div
-            v-for="ticket in filteredTickets"
-            :key="ticket.id"
-            class="bg-base-100 border border-base-200 rounded-lg p-5 hover:shadow-md transition"
-          >
-            <!-- Header line -->
-            <div class="flex flex-wrap items-center gap-2 text-sm mb-2">
-              <span class="font-semibold">{{ ticket.code }}</span>
-              <span class="badge" :class="priorityColor(ticket.priority)">
-                {{ ticket.priority }}
-              </span>
-              <span class="badge badge-outline">{{ ticket.status }}</span>
+            <div v-for="ticket in filteredTickets" :key="ticket.id" class="bg-base-100 border border-base-200 rounded-lg p-5 hover:shadow-md transition">
+                <!-- Header line -->
+                <div class="flex flex-wrap items-center gap-2 text-sm mb-2">
+                    <span class="font-semibold">{{ ticket.code }}</span>
+                    <span class="badge" :class="priorityColor(ticket.priority)">
+                        {{ ticket.priority }}
+                    </span>
+                    <span class="badge badge-outline">{{ ticket.status }}</span>
+                </div>
+    
+                <!-- Title -->
+                <h3 class="text-lg font-semibold mb-1">
+                    {{ ticket.title }}
+                </h3>
+    
+                <!-- Description -->
+                <p class="text-gray-600 text-sm mb-3">
+                    {{ ticket.description }}
+                </p>
+    
+                <!-- Meta info -->
+                <div class="flex flex-wrap gap-4 text-xs text-gray-500">
+                    <span class="flex items-center gap-1">
+                        <i class="ph ph-cube"></i> {{ ticket.module }}
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <i class="ph ph-user"></i> {{ ticket.author }}
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <i class="ph ph-clock"></i> {{ ticket.time }} yang lalu
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <i class="ph ph-chat-circle"></i> {{ ticket.comments }} komentar
+                    </span>
+                </div>
             </div>
-  
-            <!-- Title -->
-            <h3 class="text-lg font-semibold mb-1">
-              {{ ticket.title }}
-            </h3>
-  
-            <!-- Description -->
-            <p class="text-gray-600 text-sm mb-3">
-              {{ ticket.description }}
-            </p>
-  
-            <!-- Meta info -->
-            <div class="flex flex-wrap gap-4 text-xs text-gray-500">
-              <span class="flex items-center gap-1">
-                <i class="ph ph-cube"></i> {{ ticket.module }}
-              </span>
-              <span class="flex items-center gap-1">
-                <i class="ph ph-user"></i> {{ ticket.author }}
-              </span>
-              <span class="flex items-center gap-1">
-                <i class="ph ph-clock"></i> {{ ticket.time }} yang lalu
-              </span>
-              <span class="flex items-center gap-1">
-                <i class="ph ph-chat-circle"></i> {{ ticket.comments }} komentar
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </Navigation>
