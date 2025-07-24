@@ -26,7 +26,7 @@ const goBackToMenu = () => {
 <template>
     <Navigation>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-            <div class="p-4 border border-green-300 rounded-xl shadow-sm bg-white">
+            <div class="p-4 border border-green-300 rounded-xl shadow-sm bg-base">
                 <div class="flex justify-between items-start">
                     <!-- Icon box -->
                     <div class="bg-green-50 text-green-600 p-2 rounded-lg">
@@ -41,7 +41,7 @@ const goBackToMenu = () => {
 
                 <!-- Stat value -->
                 <div class="mt-4">
-                    <h3 class="text-lg font-semibold text-gray-800">2,345</h3>
+                    <h3 class="text-lg font-semibold">2,345</h3>
                     <p class="text-sm text-green-500 mt-1">New Orders</p>
                 </div>
             </div>
@@ -60,7 +60,7 @@ const goBackToMenu = () => {
 
                 <!-- Stat value -->
                 <div class="mt-4">
-                    <h3 class="text-lg font-semibold text-gray-800">2,345</h3>
+                    <h3 class="text-lg font-semibold">2,345</h3>
                     <p class="text-sm text-red-500 mt-1">Bounce Rate</p>
                 </div>
             </div>
@@ -79,7 +79,7 @@ const goBackToMenu = () => {
 
                 <!-- Stat value -->
                 <div class="mt-4">
-                    <h3 class="text-lg font-semibold text-gray-800">1,234</h3>
+                    <h3 class="text-lg font-semibold">1,234</h3>
                     <p class="text-sm text-blue-500 mt-1">User Registrations</p>
                 </div>
             </div>
@@ -98,7 +98,7 @@ const goBackToMenu = () => {
 
                 <!-- Stat value -->
                 <div class="mt-4">
-                    <h3 class="text-lg font-semibold text-gray-800">12,456</h3>
+                    <h3 class="text-lg font-semibold">12,456</h3>
                     <p class="text-sm text-purple-500 mt-1">Unique Visitors</p>
                 </div>
             </div>

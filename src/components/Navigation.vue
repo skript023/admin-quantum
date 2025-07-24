@@ -1,23 +1,25 @@
 <template>
     <div class="flex">
       <!-- Sidebar -->
-        <aside
-            :class="[
-                'fixed z-40 top-0 left-0 w-72 bg-base text-base-content p-4 flex flex-col justify-between transition-transform duration-300 ease-in-out',
-                'overflow-y-auto max-h-screen', // ✅ Tambahkan ini
-                isDrawerOpen ? 'translate-x-0' : '-translate-x-full'
-            ]"
-            >
+      <aside :class="[ 'fixed top-0 left-0 z-40 h-[100dvh] w-72 bg-base-200 text-base-content flex flex-col transition-transform duration-300 ease-in-out', isDrawerOpen ? 'translate-x-0' : '-translate-x-full']">
             <!-- Top Navigation -->
-            <div>
-                <div class="flex items-center space-x-2 mb-6">
-                    <img src="/logo.png" alt="Logo" class="w-6 h-6" />
-                    <div>
-                        <h3 class="font-semibold leading-tight">Admin Panel</h3>
-                        <p class="text-gray-500 leading-tight">Control Center</p>
+            <div class="flex-1 overflow-y-auto p-4">
+                <div class="flex items-center justify-between mb-6">
+                    <!-- Logo + Nama -->
+                    <div class="flex items-center space-x-2">
+                        <img src="/logo.png" alt="Logo" class="w-6 h-6" />
+                        <div>
+                            <h3 class="font-semibold leading-tight">Admin Panel</h3>
+                            <p class="text-gray-500 leading-tight">Control Center</p>
+                        </div>
                     </div>
-                </div>
 
+                    <!-- Tombol Close -->
+                    <button v-if="isDrawerOpen"  @click="isDrawerOpen = false" class="btn btn-square btn-ghost">
+                        <i class="ph ph-x text-xl"></i>
+                    </button>
+                </div>
+                
                 <div class="mt-8">
                     <Sidebar />
                 </div>
@@ -116,7 +118,7 @@
             <!-- Recent Activities -->
             
             <!-- USER PROFILE -->
-            <div class="mt-6 border-t pt-4 min-h-full min-w-full">
+            <div class="border-t p-4">
                 <div class="flex items-center space-x-3">
                     <div class="avatar avatar-online">
                         <div class="w-10 rounded-full bg-neutral text-neutral-content flex items-center justify-center">
@@ -132,11 +134,11 @@
         </aside>
   
         <!-- Overlay for mobile -->
-        <div
-            class="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
+        <!-- <div
+            class="fixed inset-0 bg-opacity-50 z-50 lg:hidden transition-all duration-300"
             v-show="isDrawerOpen"
             @click="isDrawerOpen = false"
-        ></div>
+        ></div> -->
   
       <!-- MAIN CONTENT -->
         <div
@@ -146,10 +148,11 @@
             ]"
             >
             <!-- HEADER -->
-            <header class="navbar bg-base-100 shadow-md px-4">
-                <div class="flex-none mr-5">
+            <header class="navbar shadow-md px-4">
+                <div class="flex-none mr-5" v-if="!isDrawerOpen">
                     <button @click="toggleDrawer" class="btn btn-square btn-ghost">
-                    <i :class="isDrawerOpen ? 'ph ph-x text-xl' : 'ph ph-list text-xl'"></i>
+                    <i :class="'ph ph-list text-xl'"></i>
+                    <!-- !isDrawerOpen ? 'ph ph-x text-xl' : 'ph ph-list text-xl' -->
                     </button>
                 </div>
                 <div class="flex-1">
@@ -166,7 +169,6 @@
                             <span class="badge badge-xs badge-error indicator-item"></span>
                         </div>
                         </label>
-
                         <!-- Dropdown Content -->
                         <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-80 bg-base-100 shadow-lg">
                             <div class="card-body">
@@ -225,6 +227,11 @@
                         </div>
                     </div>
                 </div>
+                <!-- Dark mode toggle -->
+                <button @click="isDark = !isDark" class="btn btn-ghost btn-circle mx-5">
+                    <i v-if="isDark" class="ph ph-sun text-xl"></i>
+                    <i v-else class="ph ph-moon text-xl"></i>
+                </button>
             </header>
 
             <!-- CONTENT (unchanged) -->
@@ -236,13 +243,19 @@
 </template>
   
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { Chart, registerables } from 'chart.js'
 import Sidebar from './Sidebar.vue'
   
 Chart.register(...registerables)
 
 const isDrawerOpen = ref(true)
+const isDark = ref(false)
+
+watch(isDark, (val) => {
+    document.documentElement.setAttribute('data-theme', val ? 'dark' : 'light')
+    localStorage.setItem('theme', val ? 'dark' : 'light')
+})
 
 function toggleDrawer() {
     isDrawerOpen.value = !isDrawerOpen.value
