@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { Chart, registerables } from 'chart.js'
 import Chatbox from '@/components/Chatbox.vue';
 import Chatmenu from '@/components/Chatmenu.vue';
 import Navigation from '@/components/Navigation.vue';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 // State untuk mengontrol tampilan
 const showChatMenu = ref(true); // Mulai dengan menampilkan ChatMenu
@@ -21,6 +22,73 @@ const goBackToMenu = () => {
     showChatMenu.value = true;
     selectedContact.value = null;
 };
+
+Chart.register(...registerables)
+
+onMounted(() => {
+    const salesCtx = document.getElementById('salesChart') as HTMLCanvasElement
+    const trendCtx = document.getElementById('trendChart') as HTMLCanvasElement
+  
+    if (salesCtx) {
+      new Chart(salesCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          datasets: [
+            {
+              label: 'Revenue',
+              backgroundColor: '#f97316',
+              data: [3000, 4500, 8000, 10000, 4000, 3000, 4500, 9000, 5000, 10000, 5500, 6500]
+            },
+            {
+              label: 'Sales',
+              backgroundColor: '#0ea5e9',
+              data: [2000, 3500, 4000, 5000, 3000, 2500, 3300, 4200, 3000, 4300, 3800, 3900]
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: 'top' }
+          }
+        }
+      })
+    }
+  
+    if (trendCtx) {
+      new Chart(trendCtx, {
+        type: 'line',
+        data: {
+          labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+          datasets: [
+            {
+              label: 'This Month',
+              data: [2000, 3000, 9000, 4000],
+              backgroundColor: 'rgba(16, 185, 129, 0.2)',
+              borderColor: 'rgba(16, 185, 129, 1)',
+              fill: true,
+              tension: 0.4
+            },
+            {
+              label: 'Last Month',
+              data: [1500, 2000, 3000, 2500],
+              backgroundColor: 'rgba(71, 85, 105, 0.2)',
+              borderColor: 'rgba(71, 85, 105, 1)',
+              fill: true,
+              tension: 0.4
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: 'top' }
+          }
+        }
+      })
+    }
+})
 </script>
 
 <template>
