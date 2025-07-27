@@ -1,6 +1,6 @@
 <template>
     <p class="text-gray-500 font-semibold mb-2">NAVIGATION</p>
-    <ul class="menu space-y-1 w-full">
+    <ul class="menu space-y-1 w-full text-xs">
         <li v-for="(item, index) in menu.items" :key="index">
             <details  v-if="item.children" open>
                 <summary>{{ item.label }}</summary>

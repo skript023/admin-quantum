@@ -24,4 +24,5 @@
 
 body {
     @apply text-xs; /* atau text-xs */
+    font-size: 12px;
 }

@@ -41,27 +41,27 @@
                     <p class="text-xs text-gray-500 font-semibold mb-5">SYSTEM STATUS</p>
                     <ul class="space-y-3">
                         <li class="flex justify-between items-center">
-                            <span class="flex items-center text-sm"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span> Server Status</span>
+                            <span class="flex items-center text-xs"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span> Server Status</span>
                             <p class="text-xs">99.9%</p>
                         </li>
                         <li class="flex justify-between items-center">
-                            <span class="flex items-center text-sm"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span> Database</span>
+                            <span class="flex items-center text-xs"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span> Database</span>
                             <p class="text-xs">Healthy</p>
                         </li>
                         <li class="flex justify-between items-center">
-                            <span class="flex items-center text-sm"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span> API Response</span>
+                            <span class="flex items-center text-xs"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span> API Response</span>
                             <p class="text-xs">156ms</p>
                         </li>
                         <li class="flex justify-between items-center">
-                            <span class="flex items-center text-sm"><span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span> Storage</span>
+                            <span class="flex items-center text-xs"><span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span> Storage</span>
                             <p class="text-xs">78%</p>
                         </li>
                         <li class="flex justify-between items-center">
-                            <span class="flex items-center text-sm"><span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span> Memory Usage</span>
+                            <span class="flex items-center text-xs"><span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span> Memory Usage</span>
                             <p class="text-xs">65%</p>
                         </li>
                         <li class="flex justify-between items-center">
-                            <span class="flex items-center text-sm"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span> Network</span>
+                            <span class="flex items-center text-xs"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span> Network</span>
                             <p class="text-xs">Stable</p>
                         </li>
                     </ul>
@@ -73,42 +73,42 @@
                         <li class="flex items-start space-x-2">
                             <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
                             <div>
-                                <p class="text-sm font-medium">New user registered</p>
+                                <p class="text-xs font-medium">New user registered</p>
                                 <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 2 min ago</p>
                             </div>
                         </li>
                         <li class="flex items-start space-x-2">
                             <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
                             <div>
-                                <p class="text-sm font-medium">Sales report generated</p>
+                                <p class="text-xs font-medium">Sales report generated</p>
                                 <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 15 min ago</p>
                             </div>
                         </li>
                         <li class="flex items-start space-x-2">
                             <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
                             <div>
-                                <p class="text-sm font-medium">System backup completed</p>
+                                <p class="text-xs font-medium">System backup completed</p>
                                 <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 1 hour ago</p>
                             </div>
                         </li>
                         <li class="flex items-start space-x-2">
                             <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
                             <div>
-                                <p class="text-sm font-medium">New message received</p>
+                                <p class="text-xs font-medium">New message received</p>
                                 <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 2 hours ago</p>
                             </div>
                         </li>
                         <li class="flex items-start space-x-2">
                             <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
                             <div>
-                                <p class="text-sm font-medium">Database maintenance completed</p>
+                                <p class="text-xs font-medium">Database maintenance completed</p>
                                 <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 3 hours ago</p>
                             </div>
                         </li>
                         <li class="flex items-start space-x-2">
                             <span class="mt-1 w-2 h-2 bg-black rounded-full"></span>
                             <div>
-                                <p class="text-sm font-medium">User profile updated</p>
+                                <p class="text-xs font-medium">User profile updated</p>
                                 <p class="text-xs text-gray-500 flex items-center"><i class="ph ph-clock mr-1"></i> 4 hours ago</p>
                             </div>
                         </li>
